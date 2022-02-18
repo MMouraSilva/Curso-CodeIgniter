@@ -27,7 +27,7 @@
 	</head>
 	<body id="page-top">
 		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-shrink navbar-fixed-top">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header page-scroll">
@@ -46,19 +46,22 @@
 							<a href="#page-top"></a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#about">About</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#about">About</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#services">Services</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#services">Services</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#portfolio">Portfolio</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#portfolio">Portfolio</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#team">Team</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#team">Team</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#contact">Contact</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#contact">Contact</a>
+						</li>
+						<li>
+							<a class="page-scroll" href="<?php echo base_url(); ?>restrict">Login</a>
 						</li>
 					</ul>
 				</div>
@@ -66,15 +69,3 @@
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
-		<!-- Header -->
-		<header>
-			<div class="container">
-				<div class="slider-container">
-					<div class="intro-text">
-						<div class="intro-lead-in">Welcome To Our Studio!</div>
-						<div class="intro-heading">It's Nice To Meet You</div>
-						<a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
-					</div>
-				</div>
-			</div>
-		</header>
