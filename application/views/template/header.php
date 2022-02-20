@@ -7,7 +7,7 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
+		<link rel="icon" href="<?php echo base_url(); ?>public/favicon.ico">
 		<title>Lattes - Onepage Multipurpose Bootstrap HTML</title>
 		<!-- Bootstrap core CSS -->
 		<link href="<?php echo base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet">
