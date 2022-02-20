@@ -173,7 +173,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal">x</button>
-                <h4 class="modal-title">Membros</h4>
+                <h4 class="modal-title">Membro</h4>
             </div>
 
             <div class="modal-body">
