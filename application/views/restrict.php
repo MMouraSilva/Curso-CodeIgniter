@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-offset-3 col-lg-6 text-center">
                 <div class="section-title">
-                    <h2>AREA RESTRITA</h2>
+                    <h2>ÁREA RESTRITA</h2>
                 </div>
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-offset-5 col-lg-2 text-center">
                 <div class="form-group">
-                    <a class="btn btn-link"><i class="fa fa-user"></i></a>
+                    <a id="btn_your_user" class="btn btn-link" userID="<?=$userID?>"><i class="fa fa-user"></i></a>
                     <a class="btn btn-link" href="restrict/logoff"><i class="fa fa-sign-out"></i></a>
                 </div>
             </div>
@@ -44,11 +44,11 @@
                     <table id="dt_courses" class="table table-striped table-bordered">
                         <thead>
                             <tr class="tableheader">
-                                <th>Nome</th>
-                                <th>Imagem</th>
-                                <th>Duração</th>
-                                <th>Descrição</th>
-                                <th>Ações</th>
+                                <th class="dt-center">Nome</th>
+                                <th class="dt-center no-sort">Imagem</th>
+                                <th class="dt-center">Duração</th>
+                                <th class="no-sort">Descrição</th>
+                                <th class="dt-center no-sort">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,10 +69,10 @@
                     <table id="dt_team" class="table table-striped table-bordered">
                         <thead>
                             <tr class="tableheader">
-                                <th>Nome</th>
-                                <th>Foto</th>
-                                <th>Descrição</th>
-                                <th>Ações</th>
+                                <th class="dt-center">Nome</th>
+                                <th class="dt-center no-sort">Foto</th>
+                                <th class="no-sort">Descrição</th>
+                                <th class="dt-center no-sort">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -93,10 +93,10 @@
                     <table id="dt_users" class="table table-striped table-bordered">
                         <thead>
                             <tr class="tableheader">
-                                <th>Login</th>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Ações</th>
+                                <th class="dt-center">Login</th>
+                                <th class="dt-center">Nome</th>
+                                <th class="dt-center">E-mail</th>
+                                <th class="dt-center no-sort">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -121,36 +121,41 @@
             <div class="modal-body">
                 <form id="form_course">
 
-                    <input name="course_id" hidden>
+                    <input id="courseID" name="courseID" hidden>
 
                     <div class="form-group">
-                        <label for="course_name" class="col-lg-2 control-label">Nome</label>
+                        <label for="courseName" class="col-lg-2 control-label">Nome</label>
                         <div class="col-lg-10">
-                            <input id="course_name" name="course_name" class="form-control" maxlength="100">
+                            <input id="courseName" name="courseName" class="form-control" maxlength="100">
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="course_img" class="col-lg-2 control-label">Imagem</label>
+                        <label for="courseImg" class="col-lg-2 control-label">Imagem</label>
                         <div class="col-lg-10">
-                            <input type="file" accept="image/*" id="course_img" name="course_img" class="form-control">
+                            <img src="" id="course_img_path" style="max-height: 400px; max-width: 400px;"/>
+                            <label class="btn btn-block btn-info">
+                                <i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Imagem
+                                <input type="file" id="btn_upload_course_img" accept="image/*" style="display: none;">
+                            </label>
+                            <input id="courseImg" name="courseImg" hidden>
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="course_img" class="col-lg-2 control-label">Duração</label>
+                        <label for="courseDuration" class="col-lg-2 control-label">Duração (h)</label>
                         <div class="col-lg-10">
-                            <input type="number" min="0" id="course_duration" name="course_duration" class="form-control">
+                            <input type="number" step="0.1" id="courseDuration" name="courseDuration" class="form-control">
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="course_description" class="col-lg-2 control-label">Descrição</label>
+                        <label for="courseDescription" class="col-lg-2 control-label">Descrição</label>
                         <div class="col-lg-10">
-                            <textarea id="course_description" name="course_description" class="form-control"></textarea>
+                            <textarea id="courseDescription" name="courseDescription" class="form-control"></textarea>
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -179,28 +184,33 @@
             <div class="modal-body">
                 <form id="form_member">
 
-                    <input name="member_id" hidden>
+                    <input id="memberID" name="memberID" hidden>
 
                     <div class="form-group">
-                        <label for="member_name" class="col-lg-2 control-label">Nome</label>
+                        <label for="memberName" class="col-lg-2 control-label">Nome</label>
                         <div class="col-lg-10">
-                            <input id="member_name" name="member_name" class="form-control" maxlength="100">
+                            <input id="memberName" name="memberName" class="form-control" maxlength="100">
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="member_photo" class="col-lg-2 control-label">Foto</label>
+                        <label for="memberPhoto" class="col-lg-2 control-label">Foto</label>
                         <div class="col-lg-10">
-                            <input type="file" accept="image/*" id="member_photo" name="member_photo" class="form-control">
+                            <img src="" id="member_photo_path" style="max-height: 400px; max-width: 400px;"/>
+                            <label class="btn btn-block btn-info">
+                                <i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Foto
+                                <input type="file" id="btn_upload_member_photo" accept="image/*" style="display: none;">
+                            </label>
+                            <input id="memberPhoto" name="memberPhoto" hidden>
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="member_description" class="col-lg-2 control-label">Descrição</label>
+                        <label for="memberDescription" class="col-lg-2 control-label">Descrição</label>
                         <div class="col-lg-10">
-                            <textarea id="member_description" name="member_description" class="form-control"></textarea>
+                            <textarea id="memberDescription" name="memberDescription" class="form-control"></textarea>
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -229,28 +239,28 @@
             <div class="modal-body">
                 <form id="form_user">
 
-                    <input name="user_id" hidden>
+                    <input id="userID" name="userID" hidden>
 
                     <div class="form-group">
-                        <label for="user_login" class="col-lg-2 control-label">Login</label>
+                        <label for="userLogin" class="col-lg-2 control-label">Login</label>
                         <div class="col-lg-10">
-                            <input id="user_login" name="user_login" class="form-control" maxlength="30">
+                            <input id="userLogin" name="userLogin" class="form-control" maxlength="30">
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="user_full_name" class="col-lg-2 control-label">Nome</label>
+                        <label for="userFullName" class="col-lg-2 control-label">Nome</label>
                         <div class="col-lg-10">
-                            <input id="user_full_name" name="user_full_name" class="form-control" maxlength="100">
+                            <input id="userFullName" name="userFullName" class="form-control" maxlength="100">
                             <span class="help-block"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="user_email" class="col-lg-2 control-label">E-mail</label>
+                        <label for="userEmail" class="col-lg-2 control-label">E-mail</label>
                         <div class="col-lg-10">
-                            <input id="user_email" name="user_email" class="form-control" maxlength="100">
+                            <input id="userEmail" name="userEmail" class="form-control" maxlength="100">
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -264,9 +274,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="user_password" class="col-lg-2 control-label">Senha</label>
+                        <label for="userPassword" class="col-lg-2 control-label">Senha</label>
                         <div class="col-lg-10">
-                            <input type="password" id="user_password" name="user_password" class="form-control">
+                            <input type="password" id="userPassword" name="userPassword" class="form-control">
                             <span class="help-block"></span>
                         </div>
                     </div>

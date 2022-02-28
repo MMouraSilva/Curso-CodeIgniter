@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="<?php echo base_url(); ?>public/favicon.ico">
-		<title>Lattes - Onepage Multipurpose Bootstrap HTML</title>
+		<title>Curso CodeIgniter</title>
 		<!-- Bootstrap core CSS -->
 		<link href="<?php echo base_url(); ?>public/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -53,19 +53,16 @@
 							<a href="#page-top"></a>
 						</li>
 						<li>
-							<a class="page-scroll" href="<?php echo base_url(); ?>#about">About</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#about">Sobre</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="<?php echo base_url(); ?>#services">Services</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#course">Cursos</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="<?php echo base_url(); ?>#portfolio">Portfolio</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#team">Equipe</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="<?php echo base_url(); ?>#team">Team</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="<?php echo base_url(); ?>#contact">Contact</a>
+							<a class="page-scroll" href="<?php echo base_url(); ?>#contact">Contato</a>
 						</li>
 						<li>
 							<a class="page-scroll" href="<?php echo base_url(); ?>restrict">Login</a>

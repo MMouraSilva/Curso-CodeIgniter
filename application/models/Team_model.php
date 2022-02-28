@@ -1,62 +1,51 @@
 <?php
 
-class Users_model extends CI_Model {
+class Team_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
         $this->load->database();
     }
 
-    public function get_user_data($userLogin) {
-
-        $this->db
-            ->select("userID, passwordHash, userFullName, userEmail")
-            ->from("users")
-            ->where("userLogin", $userLogin);
-
-        $result = $this->db->get();
-
-        if ($result->num_rows() > 0) {
-            return $result->row();
-        } else {
-            return NULL;
-        }
+    public function show_team() {
+        $this->db->from("team");
+        return $this->db->get()->result_array();
     }
 
     public function get_data($id, $select = NULL) {
         if(!empty($select)) {
             $this->db->select($select);
         }
-        $this->db->from("users");
-        $this->db->where("userID", $id);
+        $this->db->from("team");
+        $this->db->where("memberID", $id);
         return $this->db->get();
     }
 
     public function insert($data) {
-        $this->db->insert("users", $data);
+        $this->db->insert("team", $data);
     }
     
     public function update($id, $data) {
-        $this->db->where("userID", $id);
-        $this->db->update("users", $data);
+        $this->db->where("memberID", $id);
+        $this->db->update("team", $data);
     }
 
     public function delete($id) {
-        $this->db->where("userID", $id);
-        $this->db->delete("users");
+        $this->db->where("memberID", $id);
+        $this->db->delete("team");
     }
 
     public function is_duplicated($field, $value, $id = NULL) {
         if(!empty($id)) {
-            $this->db->where("userID <>", $id);
+            $this->db->where("memberID <>", $id);
         }
-        $this->db->from("users");
+        $this->db->from("team");
         $this->db->where($field, $value);
         return $this->db->get()->num_rows() > 0;
     }
 
-    var $column_search = array("userLogin", "userFullName", "userEmail");
-    var $column_order = array("userLogin", "userFullName", "userEmail");
+    var $column_search = array("memberName", "memberDescription");
+    var $column_order = array("memberName");
 
     private function _get_datatable() {
         $search = NULL;
@@ -71,7 +60,7 @@ class Users_model extends CI_Model {
             $order_dir = $order[0]["dir"];
         }
 
-        $this->db->from("users");
+        $this->db->from("team");
         if(isset($search)) {
             $first = TRUE;
             foreach($this->column_search as $field) {
@@ -110,7 +99,7 @@ class Users_model extends CI_Model {
     }
 
     public function records_total() {
-        $this->db->from("users");
+        $this->db->from("team");
         return $this->db->count_all_results();
     }
 }
